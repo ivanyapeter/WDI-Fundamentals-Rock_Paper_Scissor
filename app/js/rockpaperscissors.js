@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////
 /*   Provided Code - Please Don't Edit   */
 ////////////////////////////////////////////////
-'use strict';
+//'use strict';
 
 function getInput() {
     console.log("Please choose either 'rock', 'paper', or 'scissors'.")
@@ -22,25 +22,15 @@ function randomPlay() {
 ////////////////////////////////////////////////
 
 function getPlayerMove(move) {
-    // Write an expression that operates on a variable called `move`
-    // If a `move` has a value, your expression should evaluate to that value.
-    // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return move || getInput();
+        return move || getInput();
 }
 
 function getComputerMove(move) {
-    // Write an expression that operates on a variable called `move`
-    // If a `move` has a value, your expression should evaluate to that value.
-    // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
     return move || randomPlay();
 }
 
 function getWinner(playerMove,computerMove) {
     var winner;
-    // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
-    // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
-    // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
-    /* YOUR CODE HERE */
     if (playerMove === computerMove) {
         winner = "tie";
     } else if (playerMove === "rock" && computerMove === "scissors") {
@@ -58,11 +48,8 @@ function getWinner(playerMove,computerMove) {
 function playTo(roundNum) {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
-    var computerWins = 0;
-    var roundNum = roundNum;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    while(roundNum !== playerWins && roundNum !== computerWins) {
+    var computerWins = 0; 
+    while((roundNum !== playerWins) && (roundNum !== computerWins)) {
         var playerMove = getPlayerMove();
         var computerMove = getComputerMove();
         console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
@@ -70,7 +57,7 @@ function playTo(roundNum) {
         if(roundWinner === "player") {
             playerWins++;
         } else if (roundWinner === "computer") {
-            computerWins++
+            computerWins++;
         } else {
             console.log("a tie!");
         }
@@ -84,5 +71,5 @@ function playTo(roundNum) {
     return console.log("With a score of " + [playerWins, computerWins]);
     
 }
-
-playTo(2);
+var numOfPlay = 2;
+playTo(numOfPlay);
